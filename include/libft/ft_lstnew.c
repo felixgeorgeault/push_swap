@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 16:01:07 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/13 17:53:03 by fgeorgea         ###   ########.fr       */
+/*   Created: 2022/10/06 15:59:41 by fgeorgea          #+#    #+#             */
+/*   Updated: 2022/10/12 11:10:52 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+t_list	*ft_lstnew(void *content)
 {
-	t_global	g;
+	t_list	*list;
 
-	if (argc < 2)
-		return (0);
-	ft_init_struct(argc, argv, &g);
-	ft_check_arg(&g);
-	return (0);
+	list = malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

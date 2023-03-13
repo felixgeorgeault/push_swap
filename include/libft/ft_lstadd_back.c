@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 16:01:07 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/13 17:53:03 by fgeorgea         ###   ########.fr       */
+/*   Created: 2022/10/06 17:48:35 by fgeorgea          #+#    #+#             */
+/*   Updated: 2022/10/12 09:56:42 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_global	g;
+	t_list	*last;
 
-	if (argc < 2)
-		return (0);
-	ft_init_struct(argc, argv, &g);
-	ft_check_arg(&g);
-	return (0);
+	if (!new || !lst)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	else
+	{
+		last = ft_lstlast(*lst);
+		last->next = new;
+	}
 }

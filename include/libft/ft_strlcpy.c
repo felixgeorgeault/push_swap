@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 16:01:07 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/13 17:53:03 by fgeorgea         ###   ########.fr       */
+/*   Created: 2022/10/03 18:35:39 by fgeorgea          #+#    #+#             */
+/*   Updated: 2022/10/12 19:00:09 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	t_global	g;
+	size_t	len;
 
-	if (argc < 2)
+	if (!dst || !src)
 		return (0);
-	ft_init_struct(argc, argv, &g);
-	ft_check_arg(&g);
-	return (0);
+	len = ft_strlen(src);
+	while (*src && dstsize > 1)
+	{
+		*dst++ = *src++;
+		dstsize--;
+	}
+	if (dstsize != 0)
+		*dst = '\0';
+	return (len);
 }

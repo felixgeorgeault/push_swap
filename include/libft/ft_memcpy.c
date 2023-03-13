@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 16:01:07 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/13 17:53:03 by fgeorgea         ###   ########.fr       */
+/*   Created: 2022/10/03 13:54:13 by fgeorgea          #+#    #+#             */
+/*   Updated: 2022/10/12 18:33:10 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	t_global	g;
+	size_t	i;
 
-	if (argc < 2)
-		return (0);
-	ft_init_struct(argc, argv, &g);
-	ft_check_arg(&g);
-	return (0);
+	if (!dst || !src)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
+		++i;
+	}
+	return (dst);
 }

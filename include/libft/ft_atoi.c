@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_utils.c                                      :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 15:54:34 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/13 18:20:26 by fgeorgea         ###   ########.fr       */
+/*   Created: 2022/10/03 17:12:03 by fgeorgea          #+#    #+#             */
+/*   Updated: 2022/10/17 10:34:17 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	ft_is_number(char *str, t_global *g)
-{
-	int	i;
-
-	i = 0;
-	if (!str)
-		ft_error(g);
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		i++;
-	}
-	return (1);
-}
+#include "libft.h"
 
 static int	ft_isspace(char c)
 {
@@ -37,7 +19,7 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
-char	*ft_getsign_long(char *str, int *is_neg)
+const char	*ft_getsign(const char *str, int *is_neg)
 {
 	if (*str == '-' || *str == '+')
 	{
@@ -48,7 +30,7 @@ char	*ft_getsign_long(char *str, int *is_neg)
 	return (str);
 }
 
-long int	ft_long_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int			is_neg;
 	long int	nbr;
@@ -62,7 +44,7 @@ long int	ft_long_atoi(char *str)
 	tmp = 0;
 	while (ft_isspace(*str))
 		str++;
-	str = ft_getsign_long(str, &is_neg);
+	str = ft_getsign(str, &is_neg);
 	while (*str >= '0' && *str <= '9')
 	{
 		nbr *= 10;
@@ -74,5 +56,5 @@ long int	ft_long_atoi(char *str)
 		tmp = nbr;
 		str++;
 	}
-	return ((nbr * is_neg));
+	return ((int)(nbr * is_neg));
 }

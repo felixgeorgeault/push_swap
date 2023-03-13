@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 16:01:07 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/13 16:01:51 by fgeorgea         ###   ########.fr       */
+/*   Created: 2023/03/13 15:53:27 by fgeorgea          #+#    #+#             */
+/*   Updated: 2023/03/13 15:53:42 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_error(void)
 {
-	t_global	g;
-
-	if (argc < 2)
-		return (0);
-	ft_check_arg(argc, argv, &g);
-	return (0);
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }

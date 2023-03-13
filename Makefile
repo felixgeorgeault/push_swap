@@ -6,7 +6,7 @@
 #    By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/03/13 18:18:27 by fgeorgea         ###   ########.fr        #
+#    Updated: 2023/03/13 18:46:53 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC =	$(DIR)push_swap.c \
 
 OBJ = ${SRC:.c=.o}
 
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
+CFLAGS =  -fsanitize=address -g
 
 REMOVE = rm -f
 
@@ -47,7 +47,7 @@ fclean:	clean
 re: fclean all
 
 libft: 
-	$(DEPENDS)
+	@$(DEPENDS)
 
 norm: 
 	norminette -R CheckDefine srcs/

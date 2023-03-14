@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 16:01:07 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/14 18:58:00 by fgeorgea         ###   ########.fr       */
+/*   Created: 2023/03/14 16:17:20 by fgeorgea          #+#    #+#             */
+/*   Updated: 2023/03/14 20:10:32 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_init_stack(t_global *g)
 {
-	t_global	g;
+	int	i;
+	int	nbr;
 
-	if (argc < 2)
-		return (0);
-	ft_init_struct(argc, argv, &g);
-	ft_check_arg(&g);
-	ft_init_stack(&g);
-	return (0);
+	i = 0;
+	nbr = 0;
+	g->a = NULL;
+	g->b = NULL;
+	while (g->argv[i])
+	{
+		nbr = ft_atoi(g->argv[i]);
+		ft_lstadd_back_stack(&g->a, ft_lstnew_stack(nbr));
+		i++;
+	}
+	ft_ra(g);
+	ft_print_stack(g->a);
 }

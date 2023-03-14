@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/13 18:42:42 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/14 20:10:51 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,18 @@
 /*********************      STRUCTS    ************************/
 /**************************************************************/
 
+typedef struct s_stack
+{
+	int				number;
+	struct s_stack	*next;
+}		t_stack;
+
 typedef struct s_global
 {
 	int		argc;
 	char	**argv;
+	t_stack	*a;
+	t_stack	*b;
 }	t_global;
 
 /**************************************************************/
@@ -44,4 +52,25 @@ char		*ft_getsign_long(char *str, int *is_neg);
 // UTILS.C
 void		ft_error(t_global *g);
 void		ft_init_struct(int argc, char **argv, t_global *g);
+
+// STACK.C
+void	ft_init_stack(t_global *g);
+
+// LST_UTILS.C
+t_stack	*ft_lstnew_stack(int number);
+void	ft_lstadd_back_stack(t_stack **lst, t_stack *new);
+int		ft_lstsize_stack(t_stack *lst);
+
+// DEUBG.C GET RID OF THAT SHIIIIIT
+void	ft_print_stack(t_stack *stack);
+
+// MOVEMENTS.C
+void	ft_sa(t_global *g);
+void	ft_sb(t_global *g);
+void	ft_ra(t_global *g);
+void	ft_rb(t_global *g);
+
+// MOVEMENT_UTILS.C
+void	ft_sw(t_stack *stack);
+void	ft_ro(t_stack *stack);
 #endif

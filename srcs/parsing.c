@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:20:10 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/13 18:49:25 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/14 20:07:37 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,22 @@ static void	ft_check_double(t_global *g)
 	int	j;
 
 	i = 0;
-	j = i + 1;
-	while (i < g->argc)
+	j = 1;
+	while (g->argv[i])
 	{
-		if (ft_atoi(g->argv[i]) == ft_atoi(g->argv[j]))
+		while (g->argv[j])
 		{
-			printf("%d: %d\n", i, ft_atoi(g->argv[i])); // PRINTF
-			printf("%d: %d\n", j, ft_atoi(g->argv[j])); // PRINTF
-			printf("Double number"); // PRINTF
-			ft_error(g);
+			if (ft_atoi(g->argv[i]) == ft_atoi(g->argv[j]))
+			{
+				printf("%d: %d\n", i, ft_atoi(g->argv[i])); // PRINTF
+				printf("%d: %d\n", j, ft_atoi(g->argv[j])); // PRINTF
+				printf("Double number"); // PRINTF
+				ft_error(g);
+			}
+			j++;
 		}
-		j++;
-		if (j >= g->argc)
-		{
-			i++;
-			j = i + 1;
-		}
+		i++;
+		j = i + 1;
 	}
 }
 

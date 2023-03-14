@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   movements2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 16:01:07 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/14 18:58:00 by fgeorgea         ###   ########.fr       */
+/*   Created: 2023/03/14 20:11:55 by fgeorgea          #+#    #+#             */
+/*   Updated: 2023/03/14 20:12:39 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_rr(t_global *g)
 {
-	t_global	g;
-
-	if (argc < 2)
-		return (0);
-	ft_init_struct(argc, argv, &g);
-	ft_check_arg(&g);
-	ft_init_stack(&g);
-	return (0);
+	ft_ra(g);
+	ft_rb(g);
 }

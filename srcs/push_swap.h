@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/14 20:10:51 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:27:18 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 typedef struct s_stack
 {
 	int				number;
+	int				index;
 	struct s_stack	*next;
 }		t_stack;
 
@@ -59,18 +60,23 @@ void	ft_init_stack(t_global *g);
 // LST_UTILS.C
 t_stack	*ft_lstnew_stack(int number);
 void	ft_lstadd_back_stack(t_stack **lst, t_stack *new);
-int		ft_lstsize_stack(t_stack *lst);
+int		ft_lstsize_stack(t_stack **lst);
 
 // DEUBG.C GET RID OF THAT SHIIIIIT
-void	ft_print_stack(t_stack *stack);
+void	ft_print_stack(t_stack **stack);
+void	ft_print_stacks(t_global *g);
+void	ft_fill_stack(t_global *g);
 
 // MOVEMENTS.C
-void	ft_sa(t_global *g);
-void	ft_sb(t_global *g);
-void	ft_ra(t_global *g);
-void	ft_rb(t_global *g);
+void	ft_pa(t_stack **a, t_stack **b);
+void	ft_pb(t_stack **a, t_stack **b);
 
 // MOVEMENT_UTILS.C
 void	ft_sw(t_stack *stack);
 void	ft_ro(t_stack *stack);
+
+// RADIX_UTILS.C
+void	ft_fill_index(t_global *g);
+void	ft_put_index(t_stack **a, int pos, int index);
+int	ft_check_index(t_stack **a, int len);
 #endif

@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:42:47 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/14 18:30:47 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 15:48:39 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_stack	*ft_lstnew_stack(int number)
 	if (!list)
 		return (NULL);
 	list->number = number;
+	list->index = -1;
 	list->next = NULL;
 	return (list);
 }
@@ -51,17 +52,20 @@ void	ft_lstadd_back_stack(t_stack **lst, t_stack *new)
 	}
 }
 
-int	ft_lstsize_stack(t_stack *lst)
+int	ft_lstsize_stack(t_stack **lst)
 {
 	size_t	i;
+	t_stack	*first;
 
 	i = 1;
-	if (!lst)
+	first = *lst;
+	if (!lst || !*lst)
 		return (0);
-	while (lst->next)
+	while ((*lst)->next)
 	{
-		lst = lst->next;
+		*lst = (*lst)->next;
 		++i;
 	}
+	*lst = first;
 	return (i);
 }

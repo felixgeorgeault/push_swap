@@ -6,38 +6,38 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:28:18 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/14 20:10:21 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:32:42 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sa(t_global *g)
+void	ft_pa(t_stack **a, t_stack **b)
 {
-	ft_sw(g->a);
-	ft_printf("sa\n");
+	t_stack	*first;
+	
+	if (!a || !b || !*b)
+		return ;
+	first = *b;
+	*b = (*b)->next;
+	if (*a)
+		first->next = *a;
+	else
+		first->next = NULL;
+	*a = first;	
 }
 
-void	ft_sb(t_global *g)
+void	ft_pb(t_stack **a, t_stack **b)
 {
-	ft_sw(g->b);
-	ft_printf("sb\n");
-}
-
-void	ft_ss(t_global *g)
-{
-	ft_sa(g);
-	ft_sb(g);
-}
-
-void	ft_ra(t_global *g)
-{
-	ft_ro(g->a);
-	ft_printf("ra\n");
-}
-
-void	ft_rb(t_global *g)
-{
-	ft_ro(g->b);
-	ft_printf("rb\n");
+	t_stack	*first;
+	
+	if (!a || !b || !*a)
+		return ;
+	first = *a;
+	*a = (*a)->next;
+	if (*b)
+		first->next = *b;
+	else
+		first->next = NULL;
+	*b = first;	
 }

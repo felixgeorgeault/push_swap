@@ -6,14 +6,8 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 20:11:55 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/14 20:12:39 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:50:00 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_rr(t_global *g)
-{
-	ft_ra(g);
-	ft_rb(g);
-}

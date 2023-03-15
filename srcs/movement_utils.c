@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:52:16 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/14 20:09:10 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:24:46 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_sw(t_stack *stack)
 	int	i;
 	int	tmp;
 	
-	i = ft_lstsize_stack(stack);
+	i = ft_lstsize_stack(&stack);
 	if (i <= 1)
 		return ;
 	tmp = stack->number;
@@ -30,7 +30,7 @@ void	ft_ro(t_stack *stack)
 	int	i;
 	int	tmp;
 	
-	i = ft_lstsize_stack(stack);
+	i = ft_lstsize_stack(&stack);
 	tmp = 0;
 	if (i <= 2)
 		ft_sw(stack);

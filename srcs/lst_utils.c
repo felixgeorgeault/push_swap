@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:42:47 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 15:48:39 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:47:43 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,30 @@
 
 static t_stack	*ft_lstlast_stack(t_stack *lst)
 {
-	if (!lst)
-		return (NULL);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }
 
-t_stack	*ft_lstnew_stack(int number)
+t_stack	*ft_lstnew_stack(int number, t_global *g)
 {
 	t_stack	*list;
 
 	list = malloc(sizeof(t_stack));
 	if (!list)
-		return (NULL);
+		ft_error(g);
 	list->number = number;
 	list->index = -1;
 	list->next = NULL;
 	return (list);
 }
 
-void	ft_lstadd_back_stack(t_stack **lst, t_stack *new)
+void	ft_lstadd_back_stack(t_stack **lst, t_stack *new, t_global *g)
 {
 	t_stack	*last;
 
 	if (!new || !lst)
-		return ;
+		ft_error(g);
 	if (!*lst)
 	{
 		*lst = new;
@@ -68,4 +66,18 @@ int	ft_lstsize_stack(t_stack **lst)
 	}
 	*lst = first;
 	return (i);
+}
+
+void	ft_lstclear_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (!stack)
+		return ;
+	while (*stack)
+	{
+		tmp = *stack;
+		*stack = (*stack)->next;
+		free(tmp);
+	}
 }

@@ -38,7 +38,7 @@ void	ft_fill_stack(t_global *g)
 	j = 10;
 	while (i < j)
 	{
-		ft_lstadd_back_stack(&g->b, ft_lstnew_stack(i));
+		ft_lstadd_back_stack(&g->b, ft_lstnew_stack(i, g), g);
 		i++;
 	}
 }

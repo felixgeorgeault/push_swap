@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:01:07 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 17:52:06 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:26:41 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int	main(int argc, char **argv)
 	ft_check_arg(&g);
 	ft_init_stack(&g);
 	ft_fill_index(&g);
-	ft_printf("%d\n", ft_check_sort(&g));
+	ft_radix(&g);
+	ft_lstclear_stack(&g.a);
+	ft_lstclear_stack(&g.b);
+	free(g.argv);
 	return (0);
 }

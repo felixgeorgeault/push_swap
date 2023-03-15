@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:20:10 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/14 20:07:37 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:29:28 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ static void	ft_check_nbr_limit(t_global *g)
 	{
 		if (ft_long_atoi(g->argv[i]) > INT_MAX
 			|| ft_long_atoi(g->argv[i]) < INT_MIN)
-		{
-			printf("ABOVE OR UNDER LIMIT"); // PRINTF
 			ft_error(g);
-		}
 		i++;
 	}
 }
@@ -41,12 +38,7 @@ static void	ft_check_double(t_global *g)
 		while (g->argv[j])
 		{
 			if (ft_atoi(g->argv[i]) == ft_atoi(g->argv[j]))
-			{
-				printf("%d: %d\n", i, ft_atoi(g->argv[i])); // PRINTF
-				printf("%d: %d\n", j, ft_atoi(g->argv[j])); // PRINTF
-				printf("Double number"); // PRINTF
 				ft_error(g);
-			}
 			j++;
 		}
 		i++;
@@ -62,10 +54,7 @@ static void	ft_check_type(t_global *g)
 	while (i < g->argc)
 	{
 		if (!ft_is_number(g->argv[i], g))
-		{
-			printf("not a number"); // PRINTF
 			ft_error(g);
-		}	
 		i++;
 	}
 }

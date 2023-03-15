@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:44:15 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 17:54:28 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:40:18 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	ft_check_sort(t_global *g)
 	t_stack	*first;
 	t_stack	**a;
 	int		tmp;
-	
+
 	a = &g->a;
 	first = *a;
 	tmp = (*a)->number;
@@ -88,5 +88,6 @@ int	ft_check_sort(t_global *g)
 		tmp = (*a)->number;
 		*a = (*a)->next;
 	}
+	*a = first;
 	return (1);
 }

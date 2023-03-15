@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 17:51:20 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:39:45 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,30 +55,32 @@ void		ft_error(t_global *g);
 void		ft_init_struct(int argc, char **argv, t_global *g);
 
 // STACK.C
-void	ft_init_stack(t_global *g);
+void		ft_init_stack(t_global *g);
 
 // LST_UTILS.C
-t_stack	*ft_lstnew_stack(int number);
-void	ft_lstadd_back_stack(t_stack **lst, t_stack *new);
-int		ft_lstsize_stack(t_stack **lst);
+t_stack		*ft_lstnew_stack(int number, t_global *g);
+void		ft_lstadd_back_stack(t_stack **lst, t_stack *new, t_global *g);
+int			ft_lstsize_stack(t_stack **lst);
+void		ft_lstclear_stack(t_stack **stack);
 
 // DEUBG.C GET RID OF THAT SHIIIIIT
-void	ft_print_stack(t_stack **stack);
-void	ft_print_stacks(t_global *g);
-void	ft_fill_stack(t_global *g);
+void		ft_print_stack(t_stack **stack);
+void		ft_print_stacks(t_global *g);
+void		ft_fill_stack(t_global *g);
 
 // MOVEMENTS.C
-void	ft_pa(t_stack **a, t_stack **b);
-void	ft_pb(t_stack **a, t_stack **b);
+void		ft_pa(t_stack **a, t_stack **b);
+void		ft_pb(t_stack **a, t_stack **b);
+void		ft_ra(t_stack **a);
 
 // MOVEMENT_UTILS.C
-void	ft_sw(t_stack *stack);
-void	ft_ro(t_stack *stack);
+void		ft_sw(t_stack **stack);
+void		ft_ro(t_stack **stack);
 
 // RADIX_UTILS.C
-void	ft_fill_index(t_global *g);
-int		ft_check_sort(t_global *g);
+void		ft_fill_index(t_global *g);
+int			ft_check_sort(t_global *g);
 
 // RADIX.C
-void	ft_radix(t_global *g);
+void		ft_radix(t_global *g);
 #endif

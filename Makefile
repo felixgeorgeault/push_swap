@@ -6,7 +6,7 @@
 #    By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/03/15 13:44:09 by fgeorgea         ###   ########.fr        #
+#    Updated: 2023/03/15 17:43:57 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC =	$(DIR)push_swap.c \
 		$(DIR)movements.c \
 		$(DIR)movement_utils.c \
 		$(DIR)radix_utils.c \
+		$(DIR)radix.c \
 		
 OBJ = ${SRC:.c=.o}
 

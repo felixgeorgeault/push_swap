@@ -6,29 +6,13 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:44:15 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 16:43:08 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:54:28 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_fill_index(t_global *g)
-{
-	int		i;
-	int		index_value;
-	t_stack	**a;
-
-	a = &g->a;
-	i = 0;
-	while (i < ft_lstsize_stack(a))
-	{
-		index_value = ft_check_index(a, i);
-		ft_put_index(a, i, index_value);
-		i++;
-	}
-}
-
-int	ft_check_index(t_stack **a, int len)
+static int	ft_check_index(t_stack **a, int len)
 {
 	t_stack	*first;
 	int		i;
@@ -56,7 +40,7 @@ int	ft_check_index(t_stack **a, int len)
 	return (index);
 }
 
-void	ft_put_index(t_stack **a, int pos, int index)
+static void	ft_put_index(t_stack **a, int pos, int index)
 {
 	t_stack	*first;
 	int		i;
@@ -70,4 +54,39 @@ void	ft_put_index(t_stack **a, int pos, int index)
 	}
 	(*a)->index = index;
 	*a = first;
+}
+
+void	ft_fill_index(t_global *g)
+{
+	int		i;
+	int		index_value;
+	t_stack	**a;
+
+	a = &g->a;
+	i = 0;
+	while (i < ft_lstsize_stack(a))
+	{
+		index_value = ft_check_index(a, i);
+		ft_put_index(a, i, index_value);
+		i++;
+	}
+}
+
+int	ft_check_sort(t_global *g)
+{
+	t_stack	*first;
+	t_stack	**a;
+	int		tmp;
+	
+	a = &g->a;
+	first = *a;
+	tmp = (*a)->number;
+	while (*a)
+	{
+		if ((*a)->number < tmp)
+			return (0);
+		tmp = (*a)->number;
+		*a = (*a)->next;
+	}
+	return (1);
 }

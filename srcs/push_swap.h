@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 16:27:18 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:51:20 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void	ft_ro(t_stack *stack);
 
 // RADIX_UTILS.C
 void	ft_fill_index(t_global *g);
-void	ft_put_index(t_stack **a, int pos, int index);
-int	ft_check_index(t_stack **a, int len);
+int		ft_check_sort(t_global *g);
+
+// RADIX.C
+void	ft_radix(t_global *g);
 #endif

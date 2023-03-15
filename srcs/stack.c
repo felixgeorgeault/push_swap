@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:17:20 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 19:40:37 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 20:01:03 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	ft_init_stack(t_global *g)
 
 	i = 0;
 	nbr = 0;
-	g->a = NULL;
-	g->b = NULL;
 	while (g->argv[i])
 	{
 		nbr = ft_atoi(g->argv[i]);

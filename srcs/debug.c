@@ -1,32 +1,31 @@
 //////// DEBUUG FILE TO DELETE LATER
 #include "push_swap.h"
 
-void	ft_print_stack(t_stack **stack)
+void	ft_print_stack(t_stack **stack, t_global *g)
 {
-	int	i;
+	t_stack	*first;
 
-	i = 0;
+	first = *stack;
 	if (!stack)
-		return ;
+		ft_error(g);
 	if (!*stack)
 	{
 		printf("STACK IS EMPTY");
 		return ;
 	}
-	while ((*stack)->next)
+	while (*stack)
 	{
 		printf("[%d] | index: %d\n", (*stack)->number, (*stack)->index);
 		*stack = (*stack)->next;
-		i++;
 	}
-	printf("[%d] | index: %d\n", (*stack)->number, (*stack)->index);
+	*stack = first;
 }
 
 void	ft_print_stacks(t_global *g)
 {
-	ft_print_stack(&g->a);
+	ft_print_stack(&g->a, g);
 	ft_printf("-------------------------\n");
-	ft_print_stack(&g->b);
+	ft_print_stack(&g->b, g);
 }
 
 void	ft_fill_stack(t_global *g)

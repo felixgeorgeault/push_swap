@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:44:15 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 19:40:18 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 20:33:22 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,10 @@ int	ft_check_sort(t_global *g)
 	while (*a)
 	{
 		if ((*a)->number < tmp)
-			return (0);
+		{
+			*a = first;
+			return (0);	
+		}
 		tmp = (*a)->number;
 		*a = (*a)->next;
 	}

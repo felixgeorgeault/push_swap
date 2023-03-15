@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 19:39:45 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 20:22:58 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int			ft_lstsize_stack(t_stack **lst);
 void		ft_lstclear_stack(t_stack **stack);
 
 // DEUBG.C GET RID OF THAT SHIIIIIT
-void		ft_print_stack(t_stack **stack);
+void		ft_print_stack(t_stack **stack, t_global *g);
 void		ft_print_stacks(t_global *g);
 void		ft_fill_stack(t_global *g);
 
@@ -82,5 +82,5 @@ void		ft_fill_index(t_global *g);
 int			ft_check_sort(t_global *g);
 
 // RADIX.C
-void		ft_radix(t_global *g);
+void		ft_radix(t_global *g, int byte_shift);
 #endif

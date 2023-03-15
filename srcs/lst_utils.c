@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:42:47 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 19:47:43 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:54:58 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_lstclear_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	if (!stack)
+	if (!stack || !*stack)
 		return ;
 	while (*stack)
 	{

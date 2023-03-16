@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 20:22:58 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:42:17 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void		ft_ra(t_stack **a);
 // MOVEMENT_UTILS.C
 void		ft_sw(t_stack **stack);
 void		ft_ro(t_stack **stack);
+void		ft_rro(t_stack **stack);
 
 // RADIX_UTILS.C
 void		ft_fill_index(t_global *g);

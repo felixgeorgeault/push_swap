@@ -23,9 +23,25 @@ void	ft_print_stack(t_stack **stack, t_global *g)
 
 void	ft_print_stacks(t_global *g)
 {
+	ft_printf("---------------------------\n");
+	ft_printf("-----------AAAAAA----------\n");
 	ft_print_stack(&g->a, g);
-	ft_printf("-------------------------\n");
+	ft_printf("-----------BBBBBB----------\n");
 	ft_print_stack(&g->b, g);
+	ft_printf("---------------------------\n");
+}
+
+static void	ft_testpa(t_global *g)
+{
+	int	i;
+
+	i = 0;
+	 while (ft_lstsize_stack(&g->b))
+	{
+		printf(">%d\n", ft_lstsize_stack(&g->b));
+		ft_pa(&g->a, &g->b);
+		i++;
+	}
 }
 
 void	ft_fill_stack(t_global *g)
@@ -40,4 +56,6 @@ void	ft_fill_stack(t_global *g)
 		ft_lstadd_back_stack(&g->b, ft_lstnew_stack(i, g), g);
 		i++;
 	}
+	ft_testpa(g);
 }
+

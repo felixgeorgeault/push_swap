@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:53:27 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 20:01:47 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:48:45 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(t_global *g)
 {
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	if (g->argv)
 		free(g->argv);
 	if (g->a)

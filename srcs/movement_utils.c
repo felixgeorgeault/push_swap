@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:52:16 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 14:49:26 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:57:09 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_rro(t_stack **stack)
 	t_stack	*before_last;
 	t_stack	*last;
 	int		i;
-	
+
 	last = NULL;
 	i = ft_lstsize_stack(stack) - 2;
 	if (stack && *stack)

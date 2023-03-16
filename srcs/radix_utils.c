@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:44:15 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 13:52:00 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:57:43 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,12 @@ void	ft_fill_index(t_global *g)
 {
 	int		i;
 	int		index_value;
-	t_stack	**a;
 
-	a = &g->a;
 	i = 0;
-	while (i < ft_lstsize_stack(a))
+	while (i < ft_lstsize_stack(&g->a))
 	{
-		index_value = ft_check_index(a, i);
-		ft_put_index(a, i, index_value);
+		index_value = ft_check_index(&g->a, i);
+		ft_put_index(&g->a, i, index_value);
 		i++;
 	}
 }
@@ -86,7 +84,7 @@ int	ft_check_sort(t_global *g)
 		if ((*a)->number < tmp)
 		{
 			*a = first;
-			return (0);	
+			return (0);
 		}
 		tmp = (*a)->number;
 		*a = (*a)->next;

@@ -6,25 +6,13 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 17:44:38 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 17:31:34 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:57:29 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_check_if_radix(t_global *g)
-{
-	if (ft_check_sort(g))
-		return ;
-	if (ft_lstsize_stack(&g->a) == 3)
-		ft_tri_sort(g);
-	else if (ft_lstsize_stack(&g->a) == 5)
-		ft_printf("5\n");
-	else
-		ft_radix(g, 0);
-}
-
-void	ft_radix(t_global *g, int byte_shift)
+static void	ft_radix(t_global *g, int byte_shift)
 {
 	int		i;
 	t_stack	**a;
@@ -47,7 +35,7 @@ void	ft_radix(t_global *g, int byte_shift)
 	}
 }
 
-void	ft_tri_sort(t_global *g)
+static void	ft_tri_sort(t_global *g)
 {
 	int	min;
 	int	max;
@@ -70,4 +58,35 @@ void	ft_tri_sort(t_global *g)
 		ft_ra(&g->a);
 	else
 		ft_rra(&g->a);
+}
+
+static void	ft_five_sort(t_global *g)
+{
+	while (ft_lstsize_stack(&g->a) > 3)
+	{
+		if (find_min_ind(&g->a) == 0)
+			ft_pb(&g->a, &g->b);
+		else if (find_min_ind(&g->a) == (ft_lstsize_stack(&g->a) - 1))
+		{
+			ft_rra(&g->a);
+		}
+		else
+			ft_ra(&g->a);
+	}
+	if (!ft_check_sort(g))
+		ft_tri_sort(g);
+	while (ft_lstsize_stack(&g->b))
+		ft_pa(&g->a, &g->b);
+}
+
+void	ft_check_if_radix(t_global *g)
+{
+	if (ft_check_sort(g))
+		return ;
+	if (ft_lstsize_stack(&g->a) == 3)
+		ft_tri_sort(g);
+	else if (ft_lstsize_stack(&g->a) == 5)
+		ft_five_sort(g);
+	else
+		ft_radix(g, 0);
 }

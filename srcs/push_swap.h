@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 17:27:44 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:54:50 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../include/libft/libft.h"
-# include <stdio.h> // get rid of that shit !!!
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
@@ -63,11 +62,6 @@ void		ft_lstadd_back_stack(t_stack **lst, t_stack *new, t_global *g);
 int			ft_lstsize_stack(t_stack **lst);
 void		ft_lstclear_stack(t_stack **stack);
 
-// DEUBG.C GET RID OF THAT SHIIIIIT
-void		ft_print_stack(t_stack **stack, t_global *g);
-void		ft_print_stacks(t_global *g);
-void		ft_fill_stack(t_global *g);
-
 // MOVEMENTS.C
 void		ft_pa(t_stack **a, t_stack **b);
 void		ft_pb(t_stack **a, t_stack **b);
@@ -86,8 +80,6 @@ int			ft_check_sort(t_global *g);
 
 // RADIX.C
 void		ft_check_if_radix(t_global *g);
-void		ft_radix(t_global *g, int byte_shift);
-void		ft_tri_sort(t_global *g);
 
 // LST_UTILS2.C
 int			find_max_ind(t_stack **stack);

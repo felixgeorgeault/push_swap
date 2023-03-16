@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 14:42:17 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:27:44 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void		ft_fill_stack(t_global *g);
 void		ft_pa(t_stack **a, t_stack **b);
 void		ft_pb(t_stack **a, t_stack **b);
 void		ft_ra(t_stack **a);
+void		ft_sa(t_stack **a);
+void		ft_rra(t_stack **a);
 
 // MOVEMENT_UTILS.C
 void		ft_sw(t_stack **stack);
@@ -83,5 +85,11 @@ void		ft_fill_index(t_global *g);
 int			ft_check_sort(t_global *g);
 
 // RADIX.C
+void		ft_check_if_radix(t_global *g);
 void		ft_radix(t_global *g, int byte_shift);
+void		ft_tri_sort(t_global *g);
+
+// LST_UTILS2.C
+int			find_max_ind(t_stack **stack);
+int			find_min_ind(t_stack **stack);
 #endif

@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:28:18 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 14:02:40 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:27:27 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,10 @@ void	ft_sa(t_stack **a)
 {
 	ft_sw(a);
 	ft_printf("sa\n");
+}
+
+void	ft_rra(t_stack **a)
+{
+	ft_rro(a);
+	ft_printf("rra\n");
 }

@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:01:07 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 15:50:17 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:24:23 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	ft_check_arg(&g);
 	ft_init_stack(&g);
 	ft_fill_index(&g);
-	ft_radix(&g, 0);
+	ft_check_if_radix(&g);
 	ft_lstclear_stack(&g.a);
 	ft_lstclear_stack(&g.b);
 	free(g.argv);

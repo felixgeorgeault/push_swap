@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:54:34 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/13 18:40:39 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/17 12:31:32 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_getsign_long(char *str, int *is_neg)
 	return (str);
 }
 
-long int	ft_long_atoi(char *str)
+long int	ft_long_atoi(char *str, t_global *g)
 {
 	int			is_neg;
 	long int	nbr;
@@ -68,9 +68,9 @@ long int	ft_long_atoi(char *str)
 		nbr *= 10;
 		nbr += *str - 48;
 		if (nbr < tmp && is_neg == 1)
-			return (-1);
+			ft_error(g);
 		if (nbr < tmp && is_neg == -1)
-			return (0);
+			ft_error(g);
 		tmp = nbr;
 		str++;
 	}

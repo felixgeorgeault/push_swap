@@ -6,7 +6,7 @@
 #    By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/03/16 19:46:09 by fgeorgea         ###   ########.fr        #
+#    Updated: 2023/03/17 12:05:35 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC =	$(DIR)push_swap.c \
 		
 OBJ = ${SRC:.c=.o}
 
-CFLAGS =  -fsanitize=address -g
+CFLAGS =  -Werror -Wextra -Wall
 
 REMOVE = rm -f
 

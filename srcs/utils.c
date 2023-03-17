@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:53:27 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 19:48:45 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/17 12:03:44 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static void	ft_string_arg(t_global *g, char **argv)
 	int	i;
 
 	i = 0;
+	if (!argv[1][0])
+		ft_error(g);
 	g->argv = ft_split(argv[1], ' ');
 	if (!g->argv)
 		ft_error(g);

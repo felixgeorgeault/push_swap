@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:20:10 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/15 19:29:28 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/17 12:32:16 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static void	ft_check_nbr_limit(t_global *g)
 	i = 0;
 	while (i < g->argc)
 	{
-		if (ft_long_atoi(g->argv[i]) > INT_MAX
-			|| ft_long_atoi(g->argv[i]) < INT_MIN)
+		if (ft_long_atoi(g->argv[i], g) > INT_MAX
+			|| ft_long_atoi(g->argv[i], g) < INT_MIN)
 			ft_error(g);
 		i++;
 	}

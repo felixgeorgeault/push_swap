@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 19:54:50 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/17 12:31:42 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void		ft_check_arg(t_global *g);
 
 // LIBFT_UTILS.C
 int			ft_is_number(char *str, t_global *g);
-long int	ft_long_atoi(char *str);
+long int	ft_long_atoi(char *str, t_global *g);
 char		*ft_getsign_long(char *str, int *is_neg);
 
 // UTILS.C

@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 13:44:15 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 19:57:43 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/20 13:55:03 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int	ft_check_sort(t_global *g)
 	t_stack	**a;
 	int		tmp;
 
+	if (ft_lstsize_stack(&g->b) != 0)
+		return (0);
 	a = &g->a;
 	first = *a;
 	tmp = (*a)->number;

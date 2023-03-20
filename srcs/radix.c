@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 17:44:38 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/16 19:57:29 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/20 13:54:29 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ void	ft_check_if_radix(t_global *g)
 {
 	if (ft_check_sort(g))
 		return ;
+	if (ft_lstsize_stack(&g->a) == 2)
+		ft_ra(&g->a);
 	if (ft_lstsize_stack(&g->a) == 3)
 		ft_tri_sort(g);
 	else if (ft_lstsize_stack(&g->a) == 5)

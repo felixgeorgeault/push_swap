@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:01:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/17 12:31:42 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/23 17:46:21 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_global
 {
 	int		argc;
 	char	**argv;
+	int		is_split;
 	t_stack	*a;
 	t_stack	*b;
 }	t_global;
@@ -46,7 +47,7 @@ void		ft_check_arg(t_global *g);
 
 // LIBFT_UTILS.C
 int			ft_is_number(char *str, t_global *g);
-long int	ft_long_atoi(char *str, t_global *g);
+long int	ft_long_atoi(char *str, t_global *g, int *check);
 char		*ft_getsign_long(char *str, int *is_neg);
 
 // UTILS.C

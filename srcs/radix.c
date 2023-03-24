@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 17:44:38 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/20 13:54:29 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:10:30 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static void	ft_five_sort(t_global *g)
 		else
 			ft_ra(&g->a);
 	}
-	if (!ft_check_sort(g))
+	if (!(find_min_ind(&g->a) == 0 && find_max_ind(&g->a) == 2))
 		ft_tri_sort(g);
 	while (ft_lstsize_stack(&g->b))
 		ft_pa(&g->a, &g->b);

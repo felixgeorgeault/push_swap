@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:53:27 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/23 17:14:09 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:47:08 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,22 @@
 
 void	ft_error(t_global *g)
 {
+	int	i;
+
+	i = 0;
 	ft_putstr_fd("Error\n", 2);
 	if (g->argv)
+	{
+		if (g->is_split == 1)
+		{
+			while (g->argv[i])
+			{
+				free(g->argv[i]);
+				i++;
+			}
+		}
 		free(g->argv);
+	}
 	if (g->a)
 		ft_lstclear_stack(&g->a);
 	if (g->b)

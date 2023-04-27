@@ -6,7 +6,7 @@
 #    By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/03/17 12:05:35 by fgeorgea         ###   ########.fr        #
+#    Updated: 2023/04/27 15:27:03 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,21 +40,21 @@ COMPILE = gcc $(CFLAGS) -o $(NAME) -Iincludes -Linclude/libft -lft
 
 all: $(NAME)
 
-$(NAME): libft $(OBJ)
-	@$(COMPILE) $(OBJ)
+$(NAME): $(libft) $(OBJ)
+	$(COMPILE) $(OBJ)
 
 clean:
-	@$(REMOVE) $(OBJ)
-	@make -C include/libft clean
+	$(REMOVE) $(OBJ)
+	make -C include/libft clean
 
 fclean:	clean
-	@$(REMOVE) $(NAME)
-	@make -C include/libft fclean
+	$(REMOVE) $(NAME)
+	make -C include/libft fclean
 	
 re: fclean all
 
-libft: 
-	@$(DEPENDS)
+$(libft): 
+	$(DEPENDS)
 
 norm: 
 	norminette -R CheckDefine srcs/
